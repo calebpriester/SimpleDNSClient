@@ -1,0 +1,20 @@
+Name:  Caleb Priester
+Class: CPSC3600
+ASG:   HW2
+
+KNOWN PROBLEMS:
+   My program is built assuming that the user will send it the correct 
+   parameters, and so it will crash if the command line contained an error
+   when the program was called. In short, there is no error detection in that
+   section.
+
+DESIGN:
+   This program is a brute-force solution to the problem.  It builds the query
+   byte by byte in a straight-forward process and then parses the response in 
+   a similar manner.  In order to isolate specific bits, I would find the byte 
+   that the bit was contained in, bit shift to the right to right align the
+   desired bit, and the use the & operation with a mask.  This works also for
+   isolating more than 1 bit at a time, the mask just needs to be changed to 
+   do so.  My method of building the query and parsing the response involves
+   an iterator that keeps track of the byte that the program is on, and proves
+   helpful in navigating the messages that contain many many bytes.
